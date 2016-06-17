@@ -151,7 +151,8 @@ INSTALLED_APPS = [
     'djangocms_link',
     'reversion',
     'ny_irish',
-    'org_form'
+    'org_form',
+    'haystack'
 ]
 
 LANGUAGES = (
@@ -213,3 +214,12 @@ THUMBNAIL_PROCESSORS = (
     'filer.thumbnail_processors.scale_and_crop_with_subject_location',
     'easy_thumbnails.processors.filters'
 )
+
+HAYSTACK_CONNECTIONS = {
+    'default': {
+        'ENGINE': 'haystack.backends.solr_backend.SolrEngine',
+        'URL': 'http://127.0.0.1:8983/solr'
+        # ...or for multicore...
+        # 'URL': 'http://127.0.0.1:8983/solr/mysite',
+    },
+}

@@ -1,11 +1,33 @@
 {% extends "base.html" %}
 {% block content %}
 <html>
-<h1>Test</h1>
-<p>Text here
-<br> {{ query }}</p>
+<h1>Search Results</h1>
+
+<p><br>For: '{{ query }}'</p>
+
 {% for r in rs %}
-<p>{{r.name}}</p>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+            <h3 class="panel-title"><a href="/temps/view_batch/{{b.id}}">{{r.name}}</a></h3> 
+                </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <p><b>Email: </b> {{ r.email }}</p>
+                                <p><b>Telephone: </b> {{ r.contact_no }}</p>
+                            </div>
+                            <div class="col-lg-3">
+                            	<p>Address:</p>
+                                <p>{{ r.address_1 }}</p>
+                                <p>{{ r.address_2 }}</p>
+                                <p>{{ r.address_3 }}</p>
+                                <p>{{ r.zip_code }}</p>
+                                <p>{{ r.state }}</p>
+                                <p>{{ r.country }}</p>
+                            </div>
+                        </div>
+                    </div>
+    </div>
 {% endfor %}
 
 </html>

@@ -40,3 +40,9 @@ class zz_Organisation(models.Model):
     org_name = models.CharField(max_length=100)
     country = models.CharField(max_length=100, null=True)
     contact_no = models.CharField(max_length=100, null=True)
+
+class OrgPluginModel(CMSPlugin):
+    Organisation = models.ForeignKey(Organisation)
+
+    def __unicode__(self):
+        return self.Organisation.name

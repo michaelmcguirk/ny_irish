@@ -1,7 +1,49 @@
-
+{% extends "base.html" %}
 {% block content %}
 <form method="get" action="/org_form/results/" class="navbar-form pull-right">
 <input type="text" id="searchBox" class="input-medium search-query" name="q" placeholder="Search Organisations">
 <input type="submit" class="btn" value="Search" >
 </form>
+
+
+{% for r in orgs %}
+	<div class="panel panel-default">
+		<div class="panel-heading">
+            <h3 class="panel-title"><a href="/temps/view_batch/{{b.id}}">{{r.name}}</a></h3> 
+                </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <p><b>Email: </b> {{ r.email }}</p>
+                                <p><b>Telephone: </b> {{ r.contact_no }}</p>
+                            </div>
+                            <div class="col-lg-3">
+                            	<p>Address:</p>
+                                <p>{{ r.address_1 }}</p>
+                                <p>{{ r.address_2 }}</p>
+                                <p>{{ r.address_3 }}</p>
+                                <p>{{ r.zip_code }}</p>
+                                <p>{{ r.state }}</p>
+                                <p>{{ r.country }}</p>
+                            </div>
+                        </div>
+                    </div>
+    </div>
+{% endfor %}
+
+<div class="pagination">
+    <span class="step-links">
+        {% if orgs.has_previous %}
+            <a href="{{ request.get_full_path }}?page={{ orgs.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ orgs.number }} of {{ orgs.paginator.num_pages }}.
+        </span>
+
+        {% if orgs.has_next %}
+            <a href="{{ request.get_full_path }}?page={{ orgs.next_page_number }}">next</a>
+        {% endif %}
+    </span>
+</div>
 {% endblock content %}

@@ -44,6 +44,15 @@ blockquote {
   background-color: #F2F2F2;
 }
 
+.container-custom{
+  padding-top: 50px;
+}
+
+.jumbotron-feature{
+  background-image: url("http://www.cliffsofmoher.ie/wp-content/uploads/2015/01/backgroundhome.jpg");
+  width: 100%;
+}
+
 hr.small {
   max-width: 100px;
   margin: 15px auto;

@@ -1,10 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
-<form method="get" action="/org_form/results/" class="navbar-form pull-right">
-<input type="text" id="searchBox" class="input-medium search-query" name="q" placeholder="Search Organisations">
-<input type="submit" class="btn" value="Search" >
-</form>
-
+<div class="row">
+    <form method="get" action="/org_form/results/" class="navbar-form pull-right">
+    <input type="text" id="searchBox" class="input-medium search-query" name="q" placeholder="Search Organisations">
+    <input type="submit" class="btn" value="Search" >
+    </form>
+</div>
 
 {% for r in orgs %}
 	<div class="panel panel-default">

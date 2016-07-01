@@ -5,7 +5,7 @@
 
 <p><br>For: '{{ query }}'</p>
 
-{% for r in rs %}
+{% for r in results %}
 	<div class="panel panel-default">
 		<div class="panel-heading">
             <h3 class="panel-title"><a href="/temps/view_batch/{{b.id}}">{{r.name}}</a></h3> 
@@ -29,6 +29,22 @@
                     </div>
     </div>
 {% endfor %}
+
+<div class="pagination">
+    <span class="step-links">
+        {% if contacts.has_previous %}
+            <a href="?page={{ contacts.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ contacts.number }} of {{ contacts.paginator.num_pages }}.
+        </span>
+
+        {% if contacts.has_next %}
+            <a href="?page={{ contacts.next_page_number }}">next</a>
+        {% endif %}
+    </span>
+</div>
 
 </html>
 {% endblock content %}

@@ -190,11 +190,11 @@ CMS_PLACEHOLDER_CONF = {}
 DATABASES = {
     'default': {
         'CONN_MAX_AGE': 0,
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'HOST': 'nyirish.ctyoee9uibzm.us-west-2.rds.amazonaws.com',
-        'NAME': 'ny_irish',
+        'ENGINE': 'django.db.backends.mysql',
+        'HOST': 'ny-irish.ctyoee9uibzm.us-west-2.rds.amazonaws.com',
+        'NAME': 'nyirish',
         'PASSWORD': 'Li55adel',
-        'PORT': '5432',
+        'PORT': '3306',
         'USER': 'nyirish'
     }
     # 'default': {

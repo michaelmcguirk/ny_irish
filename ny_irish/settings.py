@@ -188,6 +188,15 @@ CMS_PERMISSION = True
 CMS_PLACEHOLDER_CONF = {}
 
 DATABASES = {
+    # 'default': {
+    #     'CONN_MAX_AGE': 0,
+    #     'ENGINE': 'django.db.backends.postgresql',
+    #     'HOST': 'nyirish.ctyoee9uibzm.us-west-2.rds.amazonaws.com',
+    #     'NAME': 'ny_irish',
+    #     'PASSWORD': 'Li55adel',
+    #     'PORT': '5432',
+    #     'USER': 'nyirish'
+    # }
     'default': {
         'CONN_MAX_AGE': 0,
         'ENGINE': 'django.db.backends.sqlite3',

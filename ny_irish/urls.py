@@ -17,7 +17,6 @@ urlpatterns = i18n_patterns('',
     url(r'^select2/', include('django_select2.urls')),
     url(r'^org_form/', include('org_form.urls', namespace='org_form')),
     url(r'^organisations/', include('org_form.urls', namespace='org_form')),
-    url(r'^search/', include('haystack.urls')),
     url(r'^', include('cms.urls')),
 )
 

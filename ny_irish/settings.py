@@ -151,8 +151,7 @@ INSTALLED_APPS = [
     'djangocms_link',
     'reversion',
     'ny_irish',
-    'org_form',
-    'haystack'
+    'org_form'
 ]
 
 LANGUAGES = (
